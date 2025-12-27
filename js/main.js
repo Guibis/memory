@@ -137,7 +137,7 @@ function createCard(character){
     const front = createElement("div", "face front");
     const back = createElement("div", "face back");
 
-    front.style.backgroundImage = `url('../images/${character}.jpg')`;
+    front.style.backgroundImage = `url('images/${character}.jpg')`;
 
     card.appendChild(front);
     card.appendChild(back);
@@ -158,3 +158,4 @@ function loadGame(){
 }
 
 startLogin();
+
