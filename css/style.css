@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Jersey+10&family=Jersey+25&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Jersey 10", "Jersey 25";
+    list-style: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f2f1e5da;
+    font-size: 2em;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 7px;
+    color: #3069D5;
+}
+
+/* Login */
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    justify-content: center;
+}
+
+.login-header{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.login-icon{
+    width: 200px;
+}
+
+
+.login-header h1{
+    font-family: "Bungee Shade", sans-serif;
+    color: #7B7482;
+    font-size: 3em;
+}
+
+.login-input{
+    width: 100%;
+    border: 2px solid #645d5d;
+    border-radius: 8px;
+    color: #7B7482;
+    font-size: 1.5em;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 5px;
+}
+
+.login-button{
+    background-color: #3B454E;
+    border-radius: 8px;
+    color: #B0B0B0;
+    cursor: pointer;
+    font-size: 2em;
+    max-width: 200px;
+    padding: 5px;
+    width: 100%;
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.login-button:disabled{
+    background-color: #EBEBF5;
+    color: #6B6B6B;
+    cursor: auto;
+}
+
+/* Game */
+.memory-cards{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0px 25px;
+}
+
+.card{
+    border: 2px ridge black;
+    border-radius: 8px;
+    aspect-ratio: 3/6;
+    width: 100%;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px; 
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+}
+
+.front{
+    transform: rotateY(180deg);    
+}
+
+.back{
+    background-image: url(../images/back.jpg);
+    backface-visibility: hidden;
+}
+
+.back:hover{
+    transition-duration: 0.15s;
+    transform: scale(1.1);
+}
+
+.turn-card{
+    transform: rotateY(180deg);
+}
+
+.disabled-card{
+    filter: saturate(0);
+    opacity: 0.8;
+}
+
+/* Dialog */
+dialog {
+    color: #3069D5;
+    background-color: #F6F3C2;
+    position: fixed;
+    z-index: 2;
+    inset: 0;
+    margin: auto auto;
+    padding: 30px;
+    border-radius: 20px;
+    border: 5px double #FFB433;
+    text-align: center;
+    box-shadow: 5px 5px #FFB433;
+    line-height: 1.5;
+}
+
+dialog h3{
+    font-size: 4em;
+}
+
+#dialog-p{
+    font-size: 1.5em;
+}
+
+#closeDialog{
+    width: 120px;
+    font-size: 1.1em; 
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 1px solid;
+    border-color: #00B7B5;
+    color: #00B7B5;
+    transition: all 0.5s;
+    &:hover {
+        box-shadow: inset 0 0 0 2em #00B7B5;
+        border-color: #00B7B5;
+        color: #fff;
+    }
+}
+
+@media(max-width: 436px){
+    .memory-cards{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    dialog{
+        padding: 10px;
+    }
+    dialog h3{
+        font-size: 3em;
+    }
+    #dialog-p{
+        font-size: 1.2em;
+    }
+    #closeDialog{
+        font-size: 1em;
+        padding: 5px;
+    }
+}
+
+
+@media(min-width: 2400px){
+    .login-icon{
+        width: 400px;
+    }
+    .login-header h1{
+        font-size: 5em;
+    }
+    .login-input{
+        border-radius: 14px;
+        font-size: 3em;
+        max-width: 530px;
+        padding: 10px;
+    }
+    .login-button{
+        border-radius: 14px;
+        max-width: 320px;
+        font-size: 3.5em;
+    }
+    dialog{
+        padding: 70px;
+    }
+    dialog h3{
+        font-size: 6em;
+    }
+    #dialog-p{
+        font-size: 2em;
+    }
+    #closeDialog{
+        width: 200px;
+        font-size: 1.5em;
+        padding: 10px;
+    }
+}
