@@ -103,6 +103,7 @@ header{
     background-color: #EBEBF5;
     color: #6B6B6B;
     cursor: auto;
+    animation: none;
 }
 
 /* Game */
@@ -252,3 +253,4 @@ dialog h3{
         padding: 10px;
     }
 }
+
