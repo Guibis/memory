@@ -1,7 +1,7 @@
 # 🏴‍☠️ One Piece Memory Game
 
 A fun and interactive **memory card game** inspired by the *One Piece* universe. Test your memory skills by matching character cards as fast as possible!<br>
-🃏 [Play Here]() 🎮
+🃏 [Play Here](https://guibis.github.io/memory/) 🎮
 ---
 
 ## 🎮 Game Overview
